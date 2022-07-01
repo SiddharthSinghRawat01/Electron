@@ -1,7 +1,7 @@
 console.log("preload");
 const Store = require("electron-store");
 // contextBridge : Create a safe, bi-directional, synchronous bridge across isolated contexts
-const { contextBridge } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
 let config = new Store();
 
@@ -25,4 +25,9 @@ let bridge = {
     getDetails : getDetails
 }
 
+let indexBridge = {
+    somthinghappened : (callback)=> ipcRenderer.on("somthing",callback)
+}
+
 contextBridge.exposeInMainWorld("Bridge",bridge);
+contextBridge.exposeInMainWorld("indexBridge",indexBridge);

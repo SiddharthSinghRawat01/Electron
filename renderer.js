@@ -23,3 +23,9 @@ window.addEventListener('DOMContentLoaded', ()=> {
         window.Bridge.saveDetails(fname,lname);
     })
 })
+
+window.indexBridge.somthinghappened((event,icounter)=>{
+    // console.log("somethin 1234")
+    let eleI = document.querySelector('#change')
+    eleI.innerHTML = `Somthing happende ${icounter};`
+})
