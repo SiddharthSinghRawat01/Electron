@@ -26,8 +26,11 @@ let bridge = {
 }
 
 let indexBridge = {
-    somthinghappened : (callback)=> ipcRenderer.on("somthing",callback)
-}
+    
+    somthinghappened : (callback)=>{
+        // console.log("somthinghappend console preload")
+         ipcRenderer.on("somthing",callback)
+}}
 
 contextBridge.exposeInMainWorld("Bridge",bridge);
 contextBridge.exposeInMainWorld("indexBridge",indexBridge);
