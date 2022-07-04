@@ -25,12 +25,16 @@ let bridge = {
     getDetails : getDetails
 }
 
+// get her from webContent.send
 let indexBridge = {
     
     somthinghappened : (callback)=>{
-        // console.log("somthinghappend console preload")
+        console.log("somthinghappend console preload")
          ipcRenderer.on("somthing",callback)
 }}
 
+
 contextBridge.exposeInMainWorld("Bridge",bridge);
+
+// sned it renderer.js
 contextBridge.exposeInMainWorld("indexBridge",indexBridge);

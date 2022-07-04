@@ -24,8 +24,11 @@ window.addEventListener('DOMContentLoaded', ()=> {
     })
 })
 
+// comming from main -> preload -> renderner -> HTML
 window.indexBridge.somthinghappened((event,icounter)=>{
-    // console.log("somethin 1234")
+   
     let eleI = document.querySelector('#change')
     eleI.innerHTML = `Somthing happende ${icounter};`
 })
+
+

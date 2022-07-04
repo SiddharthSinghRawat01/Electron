@@ -21,6 +21,7 @@ const createWindow = () => {
     // win.setMenu(null)
     win.loadFile("./views/home/index.html")
 
+    // send to ipcRender.on preload
     setInterval( () => {
         icounter++
         win.webContents.send('somthing', icounter)
